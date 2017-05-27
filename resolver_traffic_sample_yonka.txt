@@ -1,0 +1,6 @@
+greenfreak.net.,69.4.235.113
+baidu.com.,1.1.1.1
+google.com.,2.2.2.2
+xiaomingz.com.,3.3.3.3
+fzhiheng.com.,4.4.4.4
+tiananmen.com.,5.5.5.5

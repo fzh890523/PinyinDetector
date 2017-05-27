@@ -84,7 +84,7 @@ class PinyinDetector():
 
     def filter_language(self, domain):
 
-        filter_lang_set = set(["en", "es"])
+        filter_lang_set = {"en", "es"}
 
         if langid.classify(domain)[0] in filter_lang_set:
             return True
@@ -120,9 +120,8 @@ class PinyinDetector():
                 continue
 
             # most Pinyin domains have these TLDs, wouldn't have .eu or .ru
-            whiteTLDs = set(
-                ["com", "cn", "tw", "hk", "net", "info", "biz", "cc", "so", "com.cn", "org.cn", "org", "in", "com.tw",
-                 "net.cn"])
+            whiteTLDs = {"com", "cn", "tw", "hk", "net", "info", "biz", "cc", "so", "com.cn", "org.cn", "org", "in",
+                         "com.tw", "net.cn"}
 
             if ext.suffix not in whiteTLDs:
                 continue
@@ -263,9 +262,8 @@ class PinyinDetector():
 
     def check_giveaway_words(self, domain):
         g_score = 0.0
-        giveaways = set(
-            ["zhan", "zhuo", "zhen", "zhuan", "zhon", "chang", "chuan", "cheng", "xiang", "qian", "xiong", "xian",
-             "xuan", "jiang", "chuang", "ijin"])
+        giveaways = {"zhan", "zhuo", "zhen", "zhuan", "zhon", "chang", "chuan", "cheng", "xiang", "qian", "xiong",
+                     "xian", "xuan", "jiang", "chuang", "ijin"}
         for g in giveaways:
             if g in domain:
                 g_score += .5
